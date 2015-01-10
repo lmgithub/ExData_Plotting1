@@ -12,7 +12,7 @@ png(filename = "plot2.png", width = 480, height = 480)
 par(mar=c(4, 4, 2, 2))
 ## Set x-axis Date format to English
 Sys.setlocale("LC_TIME", "en_US.UTF-8")
-## Build histogram
+## Build plot
 plot(strptime(paste(dataPlot$Date, dataPlot$Time), format="%Y-%m-%d %H:%M:%S"), dataPlot$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 ## Close device
 dev.off()

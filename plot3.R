@@ -18,7 +18,7 @@ png(filename = "plot3.png", width = 480, height = 480)
 par(mar=c(4, 4, 2, 2))
 ## Set x-axis Date format to English
 Sys.setlocale("LC_TIME", "en_US.UTF-8")
-## Build histogram
+## Build plot
 with(dataPlot, plot(DateTime, Sub_metering_1, col="black", type="l", xlab="", ylab="Energy sub metering"))
 with(dataPlot, lines(DateTime, Sub_metering_2, col="red"))
 with(dataPlot, lines(DateTime, Sub_metering_3, col="blue"))
