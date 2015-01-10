@@ -1,6 +1,6 @@
 ## read data from file
 df <- read.csv("household_power_consumption.txt", sep=";")
-## convert to data format
+## convert to date format
 df$Date <- as.Date(df$Date, format="%d/%m/%Y")
 ## Select Global_active_power for the dates 2007-02-01 and 2007-02-02 where data exists (!="?")
 dataPlot <- df[(df$Date=="2007-02-01"|df$Date=="2007-02-02")&df$Global_active_power!="?", 3]

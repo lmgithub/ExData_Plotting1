@@ -1,10 +1,10 @@
 ## read data from file
 df <- read.csv("household_power_consumption.txt", sep=";")
-## convert to data format
+## convert to date format
 df$Date <- as.Date(df$Date, format="%d/%m/%Y")
-## Select Global_active_power for the dates 2007-02-01 and 2007-02-02 where data exists (!="?")
+## Select data for the dates 2007-02-01 and 2007-02-02 
 dataPlot <- df[df$Date=="2007-02-01"|df$Date=="2007-02-02", ]
-## Add column DateTime wuth full date (date and time in POSIXlt)
+## Add column DateTime with full date (date and time in POSIXlt)
 dataPlot$DateTime <- strptime(paste(dataPlot$Date, dataPlot$Time), format="%Y-%m-%d %H:%M:%S")
 ## Convert factor to numeric
 dataPlot$Global_active_power <- as.numeric(as.character(dataPlot$Global_active_power))
